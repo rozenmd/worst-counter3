@@ -1,0 +1,14 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "worst-counter2"
+main = "src/index.ts"
+compatibility_date = "2024-04-23"
+compatibility_flags = ["nodejs_compat"]
+services = [{ binding = "SELF", service = "worst-counter2" }]
+
+[triggers]
+crons = ["* * * * *"]
+
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "worst-counter2"
+database_id = "7a1cb3f0-9ee3-4bea-b14a-d59637a644d8"
